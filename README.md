@@ -1,1 +1,3 @@
-# progressive_growing_of_points
+# Progressive Growing of Points
+![airplane](./teaser/airplane.gif)
+![chair](./teaser/chair.gif)
