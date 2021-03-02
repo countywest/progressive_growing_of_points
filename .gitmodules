@@ -1,0 +1,6 @@
+[submodule "utils/ChamferDistancePytorch"]
+	path = utils/ChamferDistancePytorch
+	url = https://github.com/ThibaultGROUEIX/ChamferDistancePytorch.git
+[submodule "utils/PyTorchEMD"]
+	path = utils/PyTorchEMD
+	url = https://github.com/daerduoCarey/PyTorchEMD.git
