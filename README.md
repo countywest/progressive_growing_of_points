@@ -17,3 +17,8 @@
 ## Usage
   - ```python train.py``` for training
   - ```python test.py``` for testing
+
+## Credits
+  - [https://github.com/tkarras/progressive_growing_of_gans](https://github.com/tkarras/progressive_growing_of_gans)
+  - [https://github.com/optas/latent_3d_points](https://github.com/optas/latent_3d_points)
+  - [https://github.com/lynetcha/completion3d](https://github.com/lynetcha/completion3d)
