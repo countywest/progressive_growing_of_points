@@ -1,0 +1,55 @@
+# dataset
+dataset:
+  type: pcn
+  num_gt_points: 16384
+
+# model
+model:
+  id: test #TODO
+  type: point_completion
+
+  encoder:
+    type: pointnet
+    GFV_dim: 1024
+    pointnet_hp:
+      feat_dims_list: [3, 128, 256, 512, 1024]
+
+  decoder:
+    type: srtdecoder
+    srtdecoder_hp:
+      nlevels: 6
+      feat_dims: [128, 64, 64, 64, 32, 32]
+      num_output_points: 16384
+    topnet_hp:
+      num_output_points: 16384
+      nlevels: 6
+      node_feat_dim: 8
+    treegcn_hp:
+      G_FEAT: [1024, 128, 64, 64, 64, 32, 32, 3]
+      DEGREE: [4, 4, 4, 4, 4, 4, 4]
+      support: 10
+
+train_setting:
+  pg_on: true
+  pg_hp:
+    cumulative_steps: [4000, 8000, 32000, 64000, 128000, 300000]
+  optimizer:
+    type: Adam
+    beta1: 0.9
+    beta2: 0.99
+    init_lr: 0.0001
+  num_input_points: 2048
+
+  loss: CD
+
+  max_step: 300000
+  batch_size: 32
+  num_workers: 8
+  steps_per_eval: 3000
+  visu_period: 4
+  visu_period_fine: 16
+
+test_setting:
+  num_input_points: 2048
+  num_workers: 8
+  visu_period: 1

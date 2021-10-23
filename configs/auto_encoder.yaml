@@ -1,0 +1,58 @@
+# dataset
+dataset:
+  type: shapenet
+  class: airplane # airplane, chair, car, multi ...
+  num_gt_points: 2048
+
+# model
+model:
+  id: test #TODO
+  type: auto_encoder
+
+  encoder:
+    type: pointnet
+    GFV_dim: 128
+    pointnet_hp:
+      feat_dims_list: [3, 64, 64, 128, 128, 128]
+
+  decoder:
+    type: mrtdecoder_pgv2
+    srtdecoder_hp:
+      nlevels: 6
+      feat_dims: [128, 64, 64, 64, 32, 32]
+      num_output_points: 2048
+    mrtdecoder_hp:
+      nlevels: 6
+      feat_dims: [128, 64, 64, 64, 32, 32]
+      num_output_points: 2048
+    topnet_hp:
+      nlevels: 6
+      node_feat_dim: 8
+      num_output_points: 2048
+    treegcn_hp:
+      G_FEAT: [128, 128, 64, 64, 64, 32, 32, 3]
+      DEGREE: [2, 2, 2, 4, 4, 4, 4]
+      support: 10
+
+train_setting:
+  pg_on: true
+  pg_hp:
+    cumulative_steps: [4000, 8000, 32000, 64000, 128000, 300000]
+  optimizer:
+    type: Adam
+    beta1: 0.9
+    beta2: 0.99
+    init_lr: 0.0001
+
+  loss: CD
+
+  max_step: 300000
+  batch_size: 64
+  num_workers: 8
+  steps_per_eval: 1000
+  visu_period: 40
+  visu_period_fine: 1
+
+test_setting:
+  num_workers: 8
+  visu_period: 1
