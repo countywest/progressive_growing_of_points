@@ -5,6 +5,16 @@ Pytorch implementation of the paper [Progressive Growing of Points with Tree-str
 
 <img src="./gifs/airplane.gif" width=400><img src="./gifs/car.gif" width=400>
 
+```bash
+@inproceedings{Son_2021_BMVC,
+  author    = {Hyeontae Son and Young Min Kim},
+  title     = {Progressive Growing of Points with Tree-structured Generators},
+  booktitle = {32nd British Machine Vision Conference 2021, {BMVC} 2021, Online, November 22-25, 2021},
+  pages     = {44},
+  year      = {2021}
+}
+```
+
 ## Prerequisites
 
 ### Clone this repository
