@@ -1,5 +1,5 @@
 # PGpoints
-Pytorch implementation of the paper [Progressive Growing of Points with Tree-structured Generators](https://www.bmvc2021-virtualconference.com/assets/papers/0590.pdf) (BMVC 2021)
+Pytorch implementation of the paper [Progressive Growing of Points with Tree-structured Generators](https://www.bmva-archive.org.uk/bmvc/2021/assets/papers/0590.pdf) (BMVC 2021)
 
 **Hyeontae Son, Young Min Kim**
 
